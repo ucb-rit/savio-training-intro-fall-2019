@@ -8,6 +8,8 @@ To directly view the HTML, please [click here](https://htmlpreview.github.io/?ht
 
 If you're not familiar with Git or Github you can download the materials as a [zip file](https://github.com/ucb-rit/savio-training-intro-fall-2019/archive/master.zip)
 
+This material is also available at [https://tinyurl.com/brc-sep19](https://tinyurl.com/brc-sep19).
+
 Participants not familiar with operating in a UNIX-style command-line shell environment may want to look over one of these tutorials in advance:
 
 - https://github.com/berkeley-scf/tutorial-unix-basics
