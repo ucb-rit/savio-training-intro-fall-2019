@@ -9,7 +9,7 @@ We'll do this mostly as a demonstration. We encourage you to login to your accou
 
 Much of this material is based on the extensive Savio documention we have prepared and continue to prepare, available at [http://research-it.berkeley.edu/services/high-performance-computing](http://research-it.berkeley.edu/services/high-performance-computing).
 
-The materials for this tutorial are available using git at the short URL [bit.do/s19Savio](https://bit.do/s19Savio), the  GitHub URL [https://github.com/ucb-rit/savio-training-intro-fall-2019](https://github.com/ucb-rit/savio-training-intro-fall-2019), or simply as a [zip file](https://github.com/ucb-rit/savio-training-intro-fall-2019/archive/master.zip).
+The materials for this tutorial are available using git at the short URL [https://tinyurl.com/brc-sep19](https://tinyurl.com/brc-sep19), the  GitHub URL [https://github.com/ucb-rit/savio-training-intro-fall-2019](https://github.com/ucb-rit/savio-training-intro-fall-2019), or simply as a [zip file](https://github.com/ucb-rit/savio-training-intro-fall-2019/archive/master.zip).
 
 # Outline
 
@@ -88,7 +88,13 @@ The nodes are divided into several pools, called partitions. These partitions ha
 
 You have access to the following disk space, described [here in the *Storage and Backup* section](http://research-it.berkeley.edu/services/high-performance-computing/user-guide/savio-user-guide).
 
-Those directories (`/global/home/users/SAVIO_USERNAME`, `/global/scratch/SAVIO_USERNAME`, `/global/home/groups/SAVIO_GROUPNAME`) are available from any of the nodes and changes to files on one node will be seen on all the other nodes. 
+Those directories:
+
+ - `/global/home/users/SAVIO_USERNAME`
+ - `/global/scratch/SAVIO_USERNAME`
+ - `/global/home/groups/SAVIO_GROUPNAME`
+
+are available from any of the nodes and changes to files on one node will be seen on all the other nodes. 
 
 When reading/writing data to/from disk, unless the amount of data is small, please put the data in your scratch space at `/global/scratch/SAVIO_USERNAME`. The system is set up so that disk access for all users is optimized when users are doing input/output (I/O) off of scratch rather than off of their home directories. Doing I/O with files on your home directory can impact the ability of others to access their files on the filesystem. 
 

@@ -63,7 +63,7 @@ September 19, 2019
 <h1>Introduction</h1>
 <p>We'll do this mostly as a demonstration. We encourage you to login to your account and try out the various examples yourself as we go through them.</p>
 <p>Much of this material is based on the extensive Savio documention we have prepared and continue to prepare, available at <a href="http://research-it.berkeley.edu/services/high-performance-computing" class="uri">http://research-it.berkeley.edu/services/high-performance-computing</a>.</p>
-<p>The materials for this tutorial are available using git at the short URL <a href="https://bit.do/s19Savio">bit.do/s19Savio</a>, the GitHub URL <a href="https://github.com/ucb-rit/savio-training-intro-fall-2019" class="uri">https://github.com/ucb-rit/savio-training-intro-fall-2019</a>, or simply as a <a href="https://github.com/ucb-rit/savio-training-intro-fall-2019/archive/master.zip">zip file</a>.</p>
+<p>The materials for this tutorial are available using git at the short URL <a href="https://tinyurl.com/brc-sep19" class="uri">https://tinyurl.com/brc-sep19</a>, the GitHub URL <a href="https://github.com/ucb-rit/savio-training-intro-fall-2019" class="uri">https://github.com/ucb-rit/savio-training-intro-fall-2019</a>, or simply as a <a href="https://github.com/ucb-rit/savio-training-intro-fall-2019/archive/master.zip">zip file</a>.</p>
 </div>
 <div id="outline" class="slide section level1">
 <h1>Outline</h1>
@@ -158,7 +158,13 @@ September 19, 2019
 <div id="disk-space-options-home-scratch-group-condo-storage" class="slide section level1">
 <h1>Disk space options (home, scratch, group, condo storage)</h1>
 <p>You have access to the following disk space, described <a href="http://research-it.berkeley.edu/services/high-performance-computing/user-guide/savio-user-guide">here in the <em>Storage and Backup</em> section</a>.</p>
-<p>Those directories (<code>/global/home/users/SAVIO_USERNAME</code>, <code>/global/scratch/SAVIO_USERNAME</code>, <code>/global/home/groups/SAVIO_GROUPNAME</code>) are available from any of the nodes and changes to files on one node will be seen on all the other nodes.</p>
+<p>Those directories:</p>
+<ul>
+<li><code>/global/home/users/SAVIO_USERNAME</code></li>
+<li><code>/global/scratch/SAVIO_USERNAME</code></li>
+<li><code>/global/home/groups/SAVIO_GROUPNAME</code></li>
+</ul>
+<p>are available from any of the nodes and changes to files on one node will be seen on all the other nodes.</p>
 <p>When reading/writing data to/from disk, unless the amount of data is small, please put the data in your scratch space at <code>/global/scratch/SAVIO_USERNAME</code>. The system is set up so that disk access for all users is optimized when users are doing input/output (I/O) off of scratch rather than off of their home directories. Doing I/O with files on your home directory can impact the ability of others to access their files on the filesystem.</p>
 <p>Large amounts of disk space is available for purchase from the <a href="http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio"><em>condo storage</em> offering</a>. The minimum purchase is about $6,200, which provides roughly 42 TB for five years.</p>
 </div>
