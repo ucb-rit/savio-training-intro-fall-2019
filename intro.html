@@ -112,7 +112,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Instructors can request an <a href="http://research-it.berkeley.edu/programs/berkeley-research-computing/instructional-computing-allowance">Instructional Computing Allowance (ICA)</a>.</li>
 </ul>
 <p>Faculty/principal investigators can allow researchers working with them to get user accounts with access to the FCA or condo resources available to the faculty member.</p>
-<h1 id="login-nodes-compute-nodes-and-dtn-nodes">Login nodes, compute nodes, and DTN nodes</h1>
+<h1 id="the-savio-cluster">The Savio cluster</h1>
 <p>Savio is a Linux cluster - by cluster we mean a set of computers networked together such that you can:</p>
 <ul>
 <li>access the system by logging into a &quot;login node&quot;</li>
@@ -123,12 +123,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>you can also run &quot;serial&quot; jobs that use a single CPU</li>
 </ul></li>
 </ul>
+<h1 id="login-nodes-compute-nodes-and-dtn-nodes">Login nodes, compute nodes, and DTN nodes</h1>
 <p>Savio has a few different kinds of nodes:</p>
 <ul>
 <li>login nodes: for login and non-intensive interactive work such as job submission and monitoring, basic compilation, managing your disk space</li>
 <li>data transfer nodes: for transferring data to/from Savio</li>
 <li>compute nodes: for computational tasks</li>
 </ul>
+<h1 id="conceptual-diagram-of-savio">Conceptual diagram of Savio</h1>
 <center>
 <img src="savio_diagram.jpeg">
 </center>
@@ -192,7 +194,7 @@ tar -xvzf files.tgz</code></pre>
 <li>Globus Connect Pesonal actively running on your machine. At that point you can proceed as below.</li>
 </ol>
 <p>To transfer files, you open Globus at <a href="https://globus.org">globus.org</a> and authenticate to the endpoints you want to transfer between. This means that you only need to authenticate once, whereas you might need to authenticate multiple times with scp and sftp. You can then start a transfer and it will proceed in the background, including restarting if interrupted.</p>
-<p>Globus also provides a <a href="https://docs.globus.org/cli/using-the-cli">command line interface</a> that will allow you to do transfers programmatically, such that a transfer could be embedded in a workflow script.</p>
+<p>Globus also provides a <a href="https://docs.globus.org/cli/">command line interface</a> that will allow you to do transfers programmatically, such that a transfer could be embedded in a workflow script.</p>
 <h1 id="data-transfer-box-bdrive">Data transfer: Box &amp; bDrive</h1>
 <p>Box and bDrive (the Cal branded Google Drive) both provide <strong>unlimited</strong>, free, secured, and encrypted content storage of files to Berkeley affiliates. They are both good options for backup and long-term storage. While the total storage is unlimited, Box has a maximum file size of 15 Gb while bDrive has a maximum file size of 5Tb.</p>
 <p>You can interact with both services via web browser, and both services provide a desktop app you can use to move and sync files between your computer and the cloud.</p>
@@ -205,7 +207,7 @@ tar -xvzf files.tgz</code></pre>
 <p>For more ambitious users, Box has a Python-based SDK that can be used to write scripts for file transfers. For more information on how to do this, check out the <code>BoxAuthenticationBootstrap.ipynb</code> and <code>TransferFilesFromBoxToSavioScratch.ipynb</code> from BRC's cyberinfrastructure engineer on <a href="https://github.com/ucberkeley/brc-cyberinfrastructure/tree/dev/analysis-workflows/notebooks">GitHub</a></p>
 <p>BRC is working (long-term) on making Globus available for transfer to/from Box and bDrive, but it's not available yet.</p>
 <h1 id="data-transfer-box-bdrive-with-rclone">Data transfer: Box &amp; bDrive with rclone</h1>
-<p><a href="https://rclone.org/">rclone</a> is a command line program that you can use to sync files between both services and Savio. You can read <a href="http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0">instructions for using rclone on Savio here</a>.</p>
+<p><a href="https://rclone.org/">rclone</a> is a command line program that you can use to sync files between both services and Savio. You can read instructions for using rclone on Savio <a href="http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0">with Box here</a> and <a href="http://research-it.berkeley.edu/services/research-data-management-service/take-advantage-unlimited-bdrive-and-box-storage-using">with bDrive here</a>.</p>
 <p>Briefly the steps to set up rclone on Savio to interact with Box are as follows.</p>
 <p>Configuration (on dtn): <code>rclone config</code></p>
 <ul>
@@ -239,7 +241,7 @@ module avail  # what&#39;s available</code></pre>
 module load gcc
 module avail
 module load openmpi</code></pre>
-<p>Note that a variety of Python packages are directly simply by loading the python module. For R this is not the case, but you can load the <em>r-packages</em> module.</p>
+<p>Note that a variety of Python packages are available simply by loading the python module. For R this is not the case, but you can load the <em>r-packages</em> module.</p>
 <h1 id="submitting-jobs-overview">Submitting jobs: overview</h1>
 <p>All computations are done by submitting jobs to the scheduling software that manages jobs on the cluster, called SLURM.</p>
 <p>Why is this necessary? Otherwise your jobs would be slowed down by other people's jobs running on the same node. This also allows everyone to fairly share Savio.</p>

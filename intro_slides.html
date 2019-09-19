@@ -128,8 +128,8 @@ September 19, 2019
 </ul>
 <p>Faculty/principal investigators can allow researchers working with them to get user accounts with access to the FCA or condo resources available to the faculty member.</p>
 </div>
-<div id="login-nodes-compute-nodes-and-dtn-nodes" class="slide section level1">
-<h1>Login nodes, compute nodes, and DTN nodes</h1>
+<div id="the-savio-cluster" class="slide section level1">
+<h1>The Savio cluster</h1>
 <p>Savio is a Linux cluster - by cluster we mean a set of computers networked together such that you can:</p>
 <ul>
 <li>access the system by logging into a &quot;login node&quot;</li>
@@ -140,12 +140,18 @@ September 19, 2019
 <li>you can also run &quot;serial&quot; jobs that use a single CPU</li>
 </ul></li>
 </ul>
+</div>
+<div id="login-nodes-compute-nodes-and-dtn-nodes" class="slide section level1">
+<h1>Login nodes, compute nodes, and DTN nodes</h1>
 <p>Savio has a few different kinds of nodes:</p>
 <ul>
 <li>login nodes: for login and non-intensive interactive work such as job submission and monitoring, basic compilation, managing your disk space</li>
 <li>data transfer nodes: for transferring data to/from Savio</li>
 <li>compute nodes: for computational tasks</li>
 </ul>
+</div>
+<div id="conceptual-diagram-of-savio" class="slide section level1">
+<h1>Conceptual diagram of Savio</h1>
 <center>
 <img src="savio_diagram.jpeg">
 </center>
@@ -221,7 +227,7 @@ tar -xvzf files.tgz</code></pre>
 <li>Globus Connect Pesonal actively running on your machine. At that point you can proceed as below.</li>
 </ol>
 <p>To transfer files, you open Globus at <a href="https://globus.org">globus.org</a> and authenticate to the endpoints you want to transfer between. This means that you only need to authenticate once, whereas you might need to authenticate multiple times with scp and sftp. You can then start a transfer and it will proceed in the background, including restarting if interrupted.</p>
-<p>Globus also provides a <a href="https://docs.globus.org/cli/using-the-cli">command line interface</a> that will allow you to do transfers programmatically, such that a transfer could be embedded in a workflow script.</p>
+<p>Globus also provides a <a href="https://docs.globus.org/cli/">command line interface</a> that will allow you to do transfers programmatically, such that a transfer could be embedded in a workflow script.</p>
 </div>
 <div id="data-transfer-box-bdrive" class="slide section level1">
 <h1>Data transfer: Box &amp; bDrive</h1>
@@ -238,7 +244,7 @@ tar -xvzf files.tgz</code></pre>
 </div>
 <div id="data-transfer-box-bdrive-with-rclone" class="slide section level1">
 <h1>Data transfer: Box &amp; bDrive with rclone</h1>
-<p><a href="https://rclone.org/">rclone</a> is a command line program that you can use to sync files between both services and Savio. You can read <a href="http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0">instructions for using rclone on Savio here</a>.</p>
+<p><a href="https://rclone.org/">rclone</a> is a command line program that you can use to sync files between both services and Savio. You can read instructions for using rclone on Savio <a href="http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0">with Box here</a> and <a href="http://research-it.berkeley.edu/services/research-data-management-service/take-advantage-unlimited-bdrive-and-box-storage-using">with bDrive here</a>.</p>
 <p>Briefly the steps to set up rclone on Savio to interact with Box are as follows.</p>
 <p>Configuration (on dtn): <code>rclone config</code></p>
 <ul>
@@ -276,7 +282,7 @@ module avail  # what&#39;s available</code></pre>
 module load gcc
 module avail
 module load openmpi</code></pre>
-<p>Note that a variety of Python packages are directly simply by loading the python module. For R this is not the case, but you can load the <em>r-packages</em> module.</p>
+<p>Note that a variety of Python packages are available simply by loading the python module. For R this is not the case, but you can load the <em>r-packages</em> module.</p>
 </div>
 <div id="submitting-jobs-overview" class="slide section level1">
 <h1>Submitting jobs: overview</h1>
