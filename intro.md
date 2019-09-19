@@ -148,12 +148,12 @@ Linux/Mac:
 
 ```bash
 # to Savio, while on your local machine
-scp bayArea.csv paciorek@dtn.brc.berkeley.edu:~/.
-scp bayArea.csv paciorek@dtn.brc.berkeley.edu:~/data/newName.csv
-scp bayArea.csv paciorek@dtn.brc.berkeley.edu:/global/scratch/paciorek/.
+scp bayArea.csv hannsode@dtn.brc.berkeley.edu:~/.
+scp bayArea.csv hannsode@dtn.brc.berkeley.edu:~/data/newName.csv
+scp bayArea.csv hannsode@dtn.brc.berkeley.edu:/global/scratch/paciorek/.
 
 # from Savio, while on your local machine
-scp paciorek@dtn.brc.berkeley.edu:~/data/newName.csv ~/Desktop/.
+scp hannsode@dtn.brc.berkeley.edu:~/data/newName.csv ~/Documents/.
 ```
 
 If you can ssh to your local machine or want to transfer files to other systems on to which you can ssh, you can login to the dtn node to execute the scp commands:

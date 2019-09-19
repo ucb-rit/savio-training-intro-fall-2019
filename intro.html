@@ -168,12 +168,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>You need to use the Savio data transfer node, <code>dtn.brc.berkeley.edu</code>. The file <code>bayArea.csv</code> is too large to store on Github; you can obtain it <a href="https://www.stat.berkeley.edu/share/paciorek/bayArea.csv">here</a>.</p>
 <p>Linux/Mac:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># to Savio, while on your local machine</span>
-<span class="fu">scp</span> bayArea.csv paciorek@dtn.brc.berkeley.edu:~/.
-<span class="fu">scp</span> bayArea.csv paciorek@dtn.brc.berkeley.edu:~/data/newName.csv
-<span class="fu">scp</span> bayArea.csv paciorek@dtn.brc.berkeley.edu:/global/scratch/paciorek/.
+<span class="fu">scp</span> bayArea.csv hannsode@dtn.brc.berkeley.edu:~/.
+<span class="fu">scp</span> bayArea.csv hannsode@dtn.brc.berkeley.edu:~/data/newName.csv
+<span class="fu">scp</span> bayArea.csv hannsode@dtn.brc.berkeley.edu:/global/scratch/paciorek/.
 
 <span class="co"># from Savio, while on your local machine</span>
-<span class="fu">scp</span> paciorek@dtn.brc.berkeley.edu:~/data/newName.csv ~/Desktop/.</code></pre></div>
+<span class="fu">scp</span> hannsode@dtn.brc.berkeley.edu:~/data/newName.csv ~/Documents/.</code></pre></div>
 <p>If you can ssh to your local machine or want to transfer files to other systems on to which you can ssh, you can login to the dtn node to execute the scp commands:</p>
 <pre><code>ssh SAVIO_USERNAME@dtn.brc.berkeley.edu
 [SAVIO_USERNAME@dtn ~]$ scp ~/file.csv OTHER_USERNAME@other.domain.edu:~/data/.</code></pre>
