@@ -60,7 +60,7 @@ This training session will cover the following topics:
 
 Faculty/principal investigators can allow researchers working with them to get user accounts with access to the FCA or condo resources available to the faculty member.
 
-# Login nodes, compute nodes, and DTN nodes
+# The Savio cluster
 
 Savio is a Linux cluster - by cluster we mean a set of computers networked together such that you can:
 
@@ -70,11 +70,16 @@ Savio is a Linux cluster - by cluster we mean a set of computers networked toget
     - your work might use parallelization to do computation on more than one CPU
     - you can also run "serial" jobs that use a single CPU
 
+
+# Login nodes, compute nodes, and DTN nodes
+
 Savio has a few different kinds of nodes:
 
  - login nodes: for login and non-intensive interactive work such as job submission and monitoring, basic compilation, managing your disk space
  - data transfer nodes: for transferring data to/from Savio
  - compute nodes: for computational tasks
+
+# Conceptual diagram of Savio
 
 <center><img src="savio_diagram.jpeg"></center>
 
@@ -185,7 +190,7 @@ If you are transferring to/from your laptop, you'll need
 
 To transfer files, you open Globus at [globus.org](https://globus.org) and authenticate to the endpoints you want to transfer between. This means that you only need to authenticate once, whereas you might need to authenticate multiple times with scp and sftp. You can then start a transfer and it will proceed in the background, including restarting if interrupted. 
 
-Globus also provides a [command line interface](https://docs.globus.org/cli/using-the-cli) that will allow you to do transfers programmatically, such that a transfer could be embedded in a workflow script.
+Globus also provides a [command line interface](https://docs.globus.org/cli/) that will allow you to do transfers programmatically, such that a transfer could be embedded in a workflow script.
 
 
 # Data transfer: Box & bDrive
@@ -205,7 +210,7 @@ BRC is working (long-term) on making Globus available for transfer to/from Box a
 
 # Data transfer: Box & bDrive with rclone
 
-[rclone](https://rclone.org/) is a command line program that you can use to sync files between both services and Savio. You can read [instructions for using rclone on Savio here](http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0).
+[rclone](https://rclone.org/) is a command line program that you can use to sync files between both services and Savio. You can read instructions for using rclone on Savio [with Box here](http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0) and [with bDrive here](http://research-it.berkeley.edu/services/research-data-management-service/take-advantage-unlimited-bdrive-and-box-storage-using).
 
 Briefly the steps to set up rclone on Savio to interact with Box are as follows.
 
@@ -259,7 +264,7 @@ module avail
 module load openmpi
 ```
 
-Note that a variety of Python packages are directly simply by loading the python module. For R this is not the case, but you can load the *r-packages* module.
+Note that a variety of Python packages are available simply by loading the python module. For R this is not the case, but you can load the *r-packages* module.
 
 # Submitting jobs: overview
 
