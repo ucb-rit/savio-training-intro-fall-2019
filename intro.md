@@ -205,7 +205,9 @@ BRC is working (long-term) on making Globus available for transfer to/from Box a
 
 # Data transfer: Box & bDrive with rclone
 
-[rclone](https://rclone.org/) is a command line program that you can use to sync files between both services and Savio. You can read [instructions for using rclone on Savio here](http://research-it.berkeley.edu/services/research-data-management-service/take-advantage-unlimited-bdrive-and-box-storage-using)
+[rclone](https://rclone.org/) is a command line program that you can use to sync files between both services and Savio. You can read [instructions for using rclone on Savio here](http://research-it.berkeley.edu/services/high-performance-computing/transferring-data-between-savio-and-your-uc-berkeley-box-0).
+
+Briefly the steps to set up rclone on Savio to interact with Box are as follows.
 
 Configuration (on dtn): ```rclone config```
 
@@ -469,8 +471,8 @@ Here are some options:
 
   - using [Savio's HT Helper tool](http://research-it.berkeley.edu/services/high-performance-computing/user-guide/hthelper-script) to run many computational tasks (e.g., thousands of simulations, scanning tens of thousands of parameter values, etc.) as part of single Savio job submission
   - using [single-node parallelism](https://github.com/berkeley-scf/tutorial-parallel-basics) and [multiple-node parallelism](https://github.com/berkeley-scf/tutorial-parallel-distributed) in Python, R, and MATLAB
-    - parallel R tools such as *foreach*, *parLapply*, and *mclapply*
-    - parallel Python tools such as  *ipyparallel*, and *Dask*
+    - parallel R tools such as *future*, *foreach*, *parLapply*, and *mclapply*
+    - parallel Python tools such as  *ipyparallel*, *Dask*, and *ray*
     - parallel functionality in MATLAB through *parfor*
 
 # Monitoring jobs, the job queue, and overall usage
@@ -517,6 +519,8 @@ Let's see a brief demo of an IPython notebook:
  - Login as usual with a one-time password
  - Select how to run your notebook (on a test node or in the `savio2_htc`, `savio` or `savio2` partitions)
  - Start up a notebook
+
+HOWEVER, the Jupyterhub service sometimes doesn't interact well with the SLURM scheduler causing your notebook not to start and no helpful error messages to be produced.  Instead, one can [run a Jupyter notebook through the visualization node](http://research-it.berkeley.edu/services/high-performance-computing/using-jupyter-notebooks-and-jupyterhub-savio) (see the material at the bottom of the webpage).
 
 You can also run [parallel computations via an IPython notebook](http://research-it.berkeley.edu/services/high-performance-computing/using-jupyter-notebooks-and-jupyterhub-savio/parallelization).
 
@@ -694,8 +698,14 @@ results <- foreach(destVal = destVals) %dopar% {
 results
 ```
 
+You may also want to look into the `future` package for R, which provides a user-friendly interface to parallelization across one or more nodes. Here's a [tutorial on using future](https://github.com/berkeley-scf/tutorial-dask-future).
+
 # Alternative Python Parallelization: Dask
-In addition to iPyParallel, one of the newer tools in the Python space is [Dask](http://dask.pydata.org/en/latest/), which provides out-of-the-box parallelization more easily without much setup or too much additional work. Dask, as a Python package, extends Numpy/Pandas syntax for arrays and dataframes that already exists and introduces native parallelization to these data structures, which speeds up analyses. Since Dask dataframes/arrays are descendants of the Pandas dataframe and Numpy array, they are compatible with any existing code and can serve as a plug-in replacement, with performance enhancements for multiple cores/nodes. It's also worth noting that Dask is useful for scaling up to large clusters like Savio but can also be useful for speeding up analyses on your local computer. We're including some articles and documentation that may be helpful in getting started:     
+In addition to iPyParallel, one of the newer tools in the Python space is [Dask](http://dask.pydata.org/en/latest/), which provides out-of-the-box parallelization more easily without much setup or too much additional work. Dask, as a Python package, extends Numpy/Pandas syntax for arrays and dataframes that already exists and introduces native parallelization to these data structures, which speeds up analyses. Since Dask dataframes/arrays are descendants of the Pandas dataframe and Numpy array, they are compatible with any existing code and can serve as a plug-in replacement, with performance enhancements for multiple cores/nodes. It's also worth noting that Dask is useful for scaling up to large clusters like Savio but can also be useful for speeding up analyses on your local computer.
+
+We have materials available from [our spring 2019 training on using Dask on Savio](https://github.com/ucb-rit/savio-training-dask-2019) and from a [tutorial on using Dask](https://github.com/berkeley-scf/tutorial-dask-future).
+
+We're also including some articles and documentation that may be helpful in getting started:     
 
 - [Why Dask?](https://dask.pydata.org/en/latest/why.html)
 - [Standard Dask Demo](https://www.youtube.com/watch?v=ods97a5Pzw0)
@@ -715,15 +725,6 @@ In addition to iPyParallel, one of the newer tools in the Python space is [Dask]
     - office hours: Wed. 1:30-3:30 and Thur. 9:30-11:00 here in AIS
 
 
-# Upcoming events
 
-There are a number of other Love Data week events (in addition to this one)...
-
-  - Code Ocean lunch & learn; Tuesday 12:00-1:00 pm, Doe Library, Room 190 (BIDS)
-  - Preparing your data and code for reproducible publication; Wednesday 2:00-4:00 pm, Doe Library, Room 190 (BIDS)
-  - Shaping Clouds: Scaling Infrastructure for Research and Instruction at Berkeley; Thursday 1:00-2:00 pm, Doe Library, Room 190 (BIDS)
-  - Data Security: I just called to say I love you; Friday 1:00-2:00 pm, Dwinelle 127 (Academic Innovation Studio)
-
-To register for these events and find out more, please visit: [https://guides.lib.berkeley.edu/ldw2019](https://guides.lib.berkeley.edu/ldw2019).
 
 
