@@ -729,7 +729,14 @@ We're also including some articles and documentation that may be helpful in gett
     - researchdata@berkeley.edu
     - office hours: Wed. 1:30-3:30 and Thur. 9:30-11:00 here in AIS
 
+# Upcoming events and hiring
 
+ 
+ - Research IT is  developing tools and services to help researchers work with sensitive data
+   - Open house / training (including training on secure data on Savio) on Tuesday, October 22 at 3pm. 
+
+
+ - Research IT is hiring graduate students as domain consultants. See flyers or talk to one of us.
 
 
 
